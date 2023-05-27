@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { USERS } from "../constant/main"
+import { USERS } from "../../constant/main"
 import classes from "./home.module.scss"
 function Home(){
 

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { USERS } from "../constant/main";
+import { USERS } from "../../constant/main";
 import classes from "./user.module.scss"
 
 function User() {

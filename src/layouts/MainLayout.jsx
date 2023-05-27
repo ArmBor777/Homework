@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom"
 import Footer from "../Components/templets/Footer"
 import Header from "../Components/templets/Header"
-import classes from "./maynLayout.module.scss"
+import classes from "./mainLayout.module.scss"
 
 function MainLayout(){
 
     return(
-        <div className={classes.maynLayoutCont}>
+        <div className={classes.mainLayoutCont}>
             <Header/>
             <Outlet/>
             <Footer/>

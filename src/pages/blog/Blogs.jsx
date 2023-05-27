@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./blogs.module.scss";
 import Blog from "./Blog";
-import  Form  from "../blog/form/Form";
+import  Form  from "../blog/Form";
 
 
 
@@ -26,6 +26,7 @@ function Blogs() {
 
     return (
         <div className={classes.blogsCont}>
+            <div>
             {
                 blogs.length
                     ?
@@ -40,6 +41,7 @@ function Blogs() {
                     :
                     "NO BLOG"
             }
+            </div>           
 
             <Form
                 addBlog={addBlog}

@@ -1,5 +1,5 @@
+import { Box, Button, Grid, TextField } from "@mui/material";
 import { useState } from "react";
-
 
 
 function Form({ addBlog }) {
@@ -34,32 +34,55 @@ function Form({ addBlog }) {
         }
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Handle form submission logic here
+    };
+
 
     return (
-        <form
-            action=""
-            onSubmit={addNewBlog}
-        >
-            <h1>Add Form</h1>
-            <input
-                value={title}
-                type="text"
-                name="title"
-                onChange={handleInputChange}
-            />
-            <textarea
-                value={text}
-                cols="30"
-                rows="10"
-                name="text"
-                onChange={handleInputChange}
-            >
+        <div>
+            <Box sx={{ p: 3 }}>
+                <h1>Add Form</h1>
+                <form
+                    onSubmit={handleSubmit}
 
-            </textarea>
-            <button>
-                Add
-            </button>
-        </form>
+                >
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                label="Title"
+                                fullWidth
+                                onChange={handleInputChange}
+                                name="title"
+                                value={title}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                label="Message"
+                                multiline
+                                rows={4}
+                                fullWidth
+                                name="text"
+                                onChange={handleInputChange}
+                                value={text}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                type="submit"
+                                onClick={addNewBlog}
+                            >
+                                Submit
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </form>
+            </Box>
+        </div>
     )
 }
 

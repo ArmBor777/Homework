@@ -1,18 +1,39 @@
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
+import moxes from "../../images/contemplative-reptile.jpg"
+import DeleteIcon from '@mui/icons-material/Delete';
+
+function Blog({ blog, deleteBlog }) {
 
 
-
-function Blog({blog, deleteBlog}){
-
-
-    return(
+    return (
         <div>
-            <button
-                onClick={() => deleteBlog(blog.id)}
-            >
-                X
-            </button>
-            <h1>{blog.title}</h1>
-            <p>{blog.text}</p>
+            <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea>
+                    <CardMedia
+                        component="img"
+                        height="140"
+                        image={moxes}
+                        alt="green iguana"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {blog.title}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            {blog.text}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button
+                        variant="outlined"
+                        startIcon={<DeleteIcon/>}
+                        onClick={() => deleteBlog(blog.id)}
+                    >
+                        Delete
+                    </Button>
+                </CardActions>
+            </Card>
         </div>
     )
 }

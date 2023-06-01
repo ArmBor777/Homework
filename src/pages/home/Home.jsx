@@ -1,11 +1,15 @@
-import { useNavigate } from "react-router-dom"
-import { USERS } from "../../constant/main"
-import classes from "./home.module.scss"
-function Home(){
+import { useNavigate } from "react-router-dom";
+import { USERS } from "../../constant/main";
+import classes from "./home.module.scss";
+
+
+function Home() {
 
     const navigate = useNavigate()
+   
+  
 
-    return(
+    return (
         <div className={classes.homeCont}>
             <h1>Members of our company</h1>
             {
